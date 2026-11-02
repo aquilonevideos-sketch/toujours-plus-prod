@@ -169,5 +169,5 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
   const f = e.target;
   const subject = encodeURIComponent("Message de " + f.nom.value);
   const body = encodeURIComponent(f.message.value + "\n\n— " + f.nom.value + " (" + f.email.value + ")");
-  window.location.href = "mailto:tjsplusprod@gmail.com?subject=" + subject + "&body=" + body;
+  window.location.href = "mailto:aquilonevideos@gmail.com?subject=" + subject + "&body=" + body;
 });

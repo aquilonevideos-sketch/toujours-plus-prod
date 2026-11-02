@@ -215,6 +215,9 @@ p + p { margin-top: .9rem; }
 .next-big strong { color: var(--red); }
 
 /* Séq. 06 : billet */
+.contact-note { margin-bottom: 40px; }
+.contact-note a { color: var(--cream); border-bottom: 1px solid var(--red); }
+.contact-note a:hover { color: var(--red); }
 .ticket { display: grid; grid-template-columns: 1fr 1.3fr; background: var(--cream); color: #1a1714; max-width: 1000px;
   -webkit-mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
           mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; }
