@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -235,7 +235,6 @@
       <div class="container">
         <p class="slug"><b>SÉQ. 06</b> — INT. BILLETTERIE — SOIR</p>
         <h2>Un projet ? Une question ?</h2>
-        <p class="lead contact-note">Une question ? Écrivez-moi directement à <a href="mailto:aquilonevideos@gmail.com">aquilonevideos@gmail.com</a>, ou laissez un message ci-dessous : il arrivera dans la même boîte.</p>
         <div class="ticket">
           <div class="ticket-stub">
             <p class="ticket-admit">Admit<br>one</p>
@@ -252,10 +251,12 @@
             </p>
           </div>
           <form class="ticket-form" id="contact-form">
-            <label>Nom<input name="nom" required></label>
-            <label>E-mail<input name="email" type="email" required></label>
+            <label>Nom<input name="nom" autocomplete="name" required></label>
+            <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
             <label>Votre message<textarea name="message" rows="4" required></textarea></label>
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button class="btn" type="submit">Envoyer ›</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -280,6 +281,6 @@
   </div>
 
   <div class="grain" aria-hidden="true"></div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

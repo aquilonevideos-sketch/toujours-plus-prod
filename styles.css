@@ -215,9 +215,6 @@ p + p { margin-top: .9rem; }
 .next-big strong { color: var(--red); }
 
 /* Séq. 06 : billet */
-.contact-note { margin-bottom: 40px; }
-.contact-note a { color: var(--cream); border-bottom: 1px solid var(--red); }
-.contact-note a:hover { color: var(--red); }
 .ticket { display: grid; grid-template-columns: 1fr 1.3fr; background: var(--cream); color: #1a1714; max-width: 1000px;
   -webkit-mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;
           mask: radial-gradient(circle 16px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 16px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; }
@@ -235,6 +232,11 @@ p + p { margin-top: .9rem; }
 .ticket-form input, .ticket-form textarea { background: transparent; border: 0; border-bottom: 1.5px solid #1a1714; padding: 8px 0; font: inherit; font-family: "Inter", sans-serif; font-size: 1rem; text-transform: none; letter-spacing: 0; color: #1a1714; resize: vertical; }
 .ticket-form input:focus, .ticket-form textarea:focus { outline: none; border-color: var(--red); }
 .ticket-form .btn { justify-self: start; margin-top: 8px; }
+.ticket-form .btn:disabled { opacity: .6; cursor: wait; }
+.honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { font-family: var(--script); font-size: .9rem; min-height: 1.4em; }
+.form-status.ok { color: #1f7a3a; }
+.form-status.err { color: #b4161b; }
 
 /* Générique de fin */
 .credits { background: #000; text-align: center; padding: 120px 16px 50px; }

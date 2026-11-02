@@ -163,11 +163,41 @@ if (!reducedMotion) {
   });
 }
 
-// --- Formulaire de contact : ouvre la messagerie du visiteur ---
-document.getElementById("contact-form").addEventListener("submit", (e) => {
+// --- Formulaire de contact : envoi par e-mail via FormSubmit ---
+const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/aquilonevideos@gmail.com";
+const form = document.getElementById("contact-form");
+const formStatus = form.querySelector(".form-status");
+const sendBtn = form.querySelector("button[type=submit]");
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const f = e.target;
-  const subject = encodeURIComponent("Message de " + f.nom.value);
-  const body = encodeURIComponent(f.message.value + "\n\n— " + f.nom.value + " (" + f.email.value + ")");
-  window.location.href = "mailto:aquilonevideos@gmail.com?subject=" + subject + "&body=" + body;
+  if (form._honey.value) return; // robot détecté
+  sendBtn.disabled = true;
+  formStatus.className = "form-status";
+  formStatus.textContent = "Envoi en cours…";
+  try {
+    const res = await fetch(CONTACT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        Nom: form.nom.value,
+        email: form.email.value,
+        Message: form.message.value,
+        _subject: "Nouveau message du site Toujours Plus Prod",
+        _replyto: form.email.value,
+        _template: "table",
+        _captcha: "false",
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || String(data.success) !== "true") throw new Error(data.message || res.status);
+    form.reset();
+    formStatus.className = "form-status ok";
+    formStatus.textContent = "Message envoyé ! On vous répond très vite.";
+  } catch (err) {
+    formStatus.className = "form-status err";
+    formStatus.textContent = "L'envoi a échoué. Réessayez ou écrivez à tjsplusprod@gmail.com.";
+  } finally {
+    sendBtn.disabled = false;
+  }
 });
