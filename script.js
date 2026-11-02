@@ -130,7 +130,8 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !theater
 document.querySelectorAll(".feature[data-yt], .reel[data-yt]").forEach((el) => {
   const id = el.dataset.yt;
   const img = el.querySelector(".reel-img, .feature-bg");
-  img.style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/${el.classList.contains("feature") ? "maxresdefault" : "hqdefault"}.jpg)`;
+  const thumb = el.dataset.poster || `https://i.ytimg.com/vi/${id}/${el.classList.contains("feature") ? "maxresdefault" : "hqdefault"}.jpg`;
+  img.style.backgroundImage = `url(${thumb})`;
   const go = () => play(id, el.hasAttribute("data-external"));
   el.addEventListener("click", go);
   el.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });

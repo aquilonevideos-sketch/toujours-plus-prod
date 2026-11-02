@@ -178,6 +178,7 @@ p + p { margin-top: .9rem; }
 .reel:hover .reel-img, .reel:focus .reel-img { filter: none; }
 .reel-img::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.6rem; color: #fff; opacity: 0; background: rgba(255,45,45,.35); transition: opacity .3s; }
 .reel:hover .reel-img::after { opacity: 1; }
+.reel-new { position: absolute; top: 10px; left: 10px; z-index: 1; background: var(--red); color: #fff; font-family: var(--script); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: .2rem .6rem; }
 .reel-meta { font-family: var(--script); font-size: .75rem; color: var(--red); text-transform: uppercase; letter-spacing: .06em; padding: 16px 18px 0; }
 .reel h3 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-height: 1; padding: 6px 18px 0; }
 .reel p:last-child { color: var(--muted); font-size: .92rem; padding: 8px 18px 0; margin: 0; }
