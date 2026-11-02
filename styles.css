@@ -183,7 +183,7 @@ p + p { margin-top: .9rem; }
 .reel p:last-child { color: var(--muted); font-size: .92rem; padding: 8px 18px 0; margin: 0; }
 
 /* Séq. 03 : palmarès */
-.awards { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 56px 0 72px; }
+.awards { list-style: none; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin: 56px 0 72px; }
 .awards li { position: relative; aspect-ratio: 1.3; display: grid; place-items: center; color: var(--gold); }
 .awards .laurel { position: absolute; inset: 0; }
 .award-text { position: relative; max-width: 52%; text-align: center; font-family: var(--display); font-size: 1.35rem; line-height: 1; color: var(--cream); }
@@ -293,7 +293,6 @@ p + p { margin-top: .9rem; }
   .feature-inner { grid-template-columns: 1fr; gap: 20px; }
   .laurel-lg { width: 150px; height: 105px; }
   .awards { grid-template-columns: 1fr 1fr; }
-  .award-main { grid-column: 1 / -1; }
   .stills .frame img { height: 280px; }
   .trailers { grid-template-columns: 1fr; }
   .trailer { border-right: 0; border-bottom: 1px solid var(--line); }
